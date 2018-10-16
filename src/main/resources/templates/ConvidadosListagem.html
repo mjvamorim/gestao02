@@ -6,11 +6,23 @@
 
 <section layout:fragment="Conteudo">
 
+	
 	<div class="panel panel-default" style="margin: 10px">
 		<div class="panel-heading">
 			<h1 class="panel-title">Lista de convidados</h1>
 		</div>
 		<div class="panel-body">
+			<form class="form-inline" method="POST" th:object="${convidado}"
+			      th:action="@{/convidados}"  style="margin: 20px 0">
+			      <div class="form-group">
+			      	<input type="hidden" th:field="*{id}" />
+			      	<input type="text" th:field="*{nome}" class="form-control" placeholder="Nome" />
+			      	<input type="text" th:field="*{qtde}" class="form-control" placeholder="Quantidade" />
+			      	<button type="submit" class="btn btn-primary">Salvar</button>
+			      </div>
+			 </form>
+
+			
 			<table class="table">
 				<thead>
 					<tr>
