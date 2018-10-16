@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>Meu Site</title>
+	<link th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet" />
+	<link th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap-theme.min.css}" rel="stylesheet" />
+	
+</head>
+<script th:src="@{/webjars/bootstrap/3.3.7/js/jquery-2.1.4.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap-datepicker.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap-datepicker.pt-BR.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/3.3.7/js/jquery.mask.js}"></script>
+<script th:src="@{/webjars/bootstrap/3.3.7/js/jquery.maskMoney.min.js}"></script>
+<script th:src="@{/js/application.js}"></script>
+<body>
+	<!-- <header layout:insert="Cabecalho"></header>
+	 -->
+	 
+	 <h1>Titulo</h1>
+	 <section layout:fragment="Conteudo">
+		<p>Page content goes here</p>
+	</section>
+
+</body>
+</html>	

@@ -10,6 +10,7 @@ import com.algaworks.festas.repository.Convidados;
 @Controller
 @RequestMapping("/convidados")
 public class ConvidadosController {
+	
 	@Autowired
 	Convidados convidados;
 	
