@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<nav class="navbar navbar-inverse navbar-static-top">
+		<div class="container-fluid">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<div class="navbar-header">
+				<p class="navbar-brand navbar-left">
+					<strong>Pegasus Sistemas</strong>
+				</p>
+			</div>
+			
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav nav-pills navbar-left">
+					<li> <a th:href="@{/}">Home</a></li>
+					<li> <a th:href="@{/festas}">Festas</a></li>
+					<li> <a th:href="@{/convidados}">Convidados</a></li>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+</html>

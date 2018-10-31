@@ -1,21 +1,22 @@
 package com.algaworks.festas.models;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Convidado {
+public class Festa {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	private String nome;
-	private Integer qtde;
-	
-	
-	//-------Getters and Setters  
+	private String data;
+	private String hora;
+	private String foto;
 	public Long getId() {
 		return id;
 	}
@@ -28,10 +29,24 @@ public class Convidado {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Integer getQtde() {
-		return qtde;
+	public String getData() {
+		return data;
 	}
-	public void setQtde(Integer qtde) {
-		this.qtde = qtde;
+	public void setData(String data) {
+		this.data = data;
 	}
+	public String getHora() {
+		return hora;
+	}
+	public void setHora(String hora) {
+		this.hora = hora;
+	}
+	public String getFoto() {
+		return foto;
+	}
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+
 }

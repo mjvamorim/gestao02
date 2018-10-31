@@ -1,0 +1,79 @@
+/* Tela grande */
+@media (min-width: 768px) {
+	.panel-default {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	
+	.alert {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+
+.aw-link-panel {
+	float: right;
+	padding: 0px;
+}
+
+
+.aw-titulo-panel {
+	float: left;
+	padding-top: 2px;
+}
+
+
+.logo{
+	height: 80px; 
+	width: 200px;  
+	margin-top: 10px; 
+}
+
+.logo2{
+	float: right;
+}
+
+.navbar-custom {
+    background-color:#EB760F;
+    color:#ffffff;
+    border-radius:0;
+}
+
+.navbar-custom .navbar-nav > li > a {
+    color:#fff;
+}
+
+.navbar-custom .navbar-nav > .active > a {
+    color: #ffffff;
+    background-color:transparent;
+}
+
+.navbar-custom .navbar-nav > li > a:hover,
+.navbar-custom .navbar-nav > li > a:focus,
+.navbar-custom .navbar-nav > .active > a:hover,
+.navbar-custom .navbar-nav > .active > a:focus,
+.navbar-custom .navbar-nav > .open >a {
+    text-decoration: none;
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.navbar-custom .navbar-brand {
+    color:#eeeeee;
+}
+.navbar-custom .navbar-toggle {
+    background-color:#eeeeee;
+}
+.navbar-custom .icon-bar {
+    background-color:#EB760F;
+}
+/* for dropdowns only */
+.navbar-custom .navbar-nav .dropdown-menu  { 
+  background-color: #EB760F;
+}
+.navbar-custom .navbar-nav .dropdown-menu>li>a  { 
+  color: #fff;
+}
+.navbar-custom .navbar-nav .dropdown-menu>li>a:hover,.navbar-custom .navbar-nav .dropdown-menu>li>a:focus  { 
+  color: #000000;
+}

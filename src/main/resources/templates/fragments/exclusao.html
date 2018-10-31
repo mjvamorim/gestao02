@@ -1,0 +1,45 @@
+
+<div th:fragment="exclusao">
+	<div class="modal fade" id="confirmacaoExclusaoModal" tabindex="-1">
+		<div class="modal-dialog">
+			<form th:attr="data-url-base=@{/}" method="GET">	
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Você tem certeza?</h4>
+					</div>
+	
+					<div class="modal-body">
+						<span>Tem certeza que deseja apagar?</span>
+					</div>
+	
+					<div class="modal-footer">
+						
+						<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+						<button type="submit" class="btn btn-primary">Excluir</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script>
+	$('#confirmacaoExclusaoModal').on('show.bs.modal', function(event) {
+		var button = $(event.relatedTarget);
+		
+		var model = button.data('model');
+		var id = button.data('id');
+		var name = button.data('name');
+	 
+		var modal = $(this);
+		var form = modal.find('form');
+		$('#Id').val(id);
+		var action = form.data('url-base');
+		if (!action.endsWith('/')) {
+			action += '/';
+		}
+		form.attr('action', action + model+'s/excluir/'+id);
+		
+		modal.find('.modal-body span').html('Tem certeza que deseja excluir o '+model+' <strong>' + name + '</strong>?');
+	});
+	</script>
+</div>
+
