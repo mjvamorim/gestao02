@@ -9,15 +9,17 @@
 	
 	<div class="panel panel-default" style="margin: 10px">
 		<div class="panel-heading">
-			<h1 class="panel-title">Lista de convidados</h1>
+			<h1 class="panel-title">Lista de festas</h1>
 		</div>
 		<div class="panel-body">
-			<form class="form-inline" method="POST" th:object="${convidado}"
-			      th:action="@{/convidados}"  style="margin: 20px 0">
+			<form class="form-inline" method="POST" th:object="${festa}"
+			      th:action="@{/festas}"  style="margin: 20px 0">
 			      <div class="form-group">
 			      	<input type="hidden" th:field="*{id}" />
 			      	<input type="text" th:field="*{nome}" class="form-control" placeholder="Nome" />
-			      	<input type="text" th:field="*{qtde}" class="form-control" placeholder="Quantidade" />
+			      	<input type="date" th:field="*{data}" class="form-control" placeholder="Data" />
+			      	<input type="text" th:field="*{hora}" class="form-control" placeholder="Hora" />
+			      	<input type="text" th:field="*{foto}" class="form-control" placeholder="Foto" />
 			      	<button type="submit" class="btn btn-primary">Salvar</button>
 			      </div>
 			 </form>
@@ -27,22 +29,26 @@
 				<thead>
 					<tr>
 						<th>Id</th>
-						<th>Nome</th>
-						<th>Acompanhantes</th>
+						<th>Festa</th>
+						<th>Data</th>
+						<th>Hora</th>
+						<th>Foto</th>
 						<th>Ação</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="c : ${convidados}">
-						<td th:text="${c.id}">João</td>
-						<td th:text="${c.nome}">João</td>
-						<td th:text="${c.qtde}">3</td>
+					<tr th:each="f : ${festas}">
+						<td th:text="${f.id}">João</td>
+						<td th:text="${f.nome}">João</td>
+						<td th:text="${f.data}">3</td>						
+						<td th:text="${f.hora}">3</td>						
+						<td th:text="${f.foto}">3</td>
 						<td>
-							<a th:href="@{/convidados/alterar/}+${c.id}" 
+							<a th:href="@{/festas/alterar/}+${f.id}" 
 						    class="glyphicon glyphicon-pencil">
 							</a>
 							<a class="btn btn-link btn-xs" data-toggle="modal" data-target="#confirmacaoExclusaoModal"
-		   								th:attr="data-id=${c.id}, data-name=${c.nome}, data-model='convidado' "
+		   								th:attr="data-id=${f.id}, data-name=${f.nome}, data-model='festa' "
 		   								title="Excluir" rel="tooltip" data-placement="top">
 		   							<span class="glyphicon glyphicon-remove"></span>
 		   					</a>

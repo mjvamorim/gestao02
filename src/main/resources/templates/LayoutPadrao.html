@@ -7,26 +7,27 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width" />
-	<title>Meu Site</title>
-	<link th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet" />
-	<link th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap-theme.min.css}" rel="stylesheet" />
-	
+	<title>Gestao de Festas</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap-datepicker.standalone.min.css}" />
 </head>
-<script th:src="@{/webjars/bootstrap/3.3.7/js/jquery-2.1.4.min.js}"></script>
-<script th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
-<script th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap-datepicker.min.js}"></script>
-<script th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap-datepicker.pt-BR.min.js}"></script>
-<script th:src="@{/webjars/bootstrap/3.3.7/js/jquery.mask.js}"></script>
-<script th:src="@{/webjars/bootstrap/3.3.7/js/jquery.maskMoney.min.js}"></script>
+<script th:src="@{/js/jquery-2.1.4.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/bootstrap-datepicker.min.js}"></script>
+<script th:src="@{/js/bootstrap-datepicker.pt-BR.min.js}"></script>
+<script th:src="@{/js/jquery.mask.js}"></script>
+<script th:src="@{/js/jquery.maskMoney.min.js}"></script>
 <script th:src="@{/js/application.js}"></script>
 <body>
-	<!-- <header layout:insert="Cabecalho"></header>
-	 -->
+	<header layout:insert="fragments/Cabecalho"></header>
+
 	 
 	 <h1>Sistema de Gestão Festas</h1>
 	 </br>
 	 <section layout:fragment="Conteudo">
 		<p>Page content goes here</p>
+		
 	</section>
 
 </body>
