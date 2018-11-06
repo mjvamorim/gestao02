@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Convidado {
@@ -14,7 +17,15 @@ public class Convidado {
 	private String nome;
 	private Integer qtde;
 	
+	@ManyToOne
+    @JoinColumn(name = "festa_id")
+	@NotNull(message = "Festa Obrigatória")
+	private Festa festa;
 	
+	//
+	
+	
+
 	//-------Getters and Setters  
 	public Long getId() {
 		return id;
@@ -33,5 +44,13 @@ public class Convidado {
 	}
 	public void setQtde(Integer qtde) {
 		this.qtde = qtde;
+	}
+	
+	public Festa getFesta() {
+		return festa;
+	}
+	
+	public void setFesta(Festa festa) {
+		this.festa = festa;
 	}
 }

@@ -18,7 +18,11 @@
 			      	<input type="hidden" th:field="*{id}" />
 			      	<input type="text" th:field="*{nome}" class="form-control" placeholder="Nome" />
 			      	<input type="text" th:field="*{qtde}" class="form-control" placeholder="Quantidade" />
-			      	<button type="submit" class="btn btn-primary">Salvar</button>
+			      	<select th:field="*{festa}">
+						<option value="">Selecione a festa</option>
+						<option th:each="f : ${festas}" th:value="${f.id}" th:text="${f.nome}" selected="selected"></option>
+					</select>
+					<button type="submit" class="btn btn-primary">Salvar</button>
 			      </div>
 			 </form>
 
@@ -29,7 +33,9 @@
 						<th>Id</th>
 						<th>Nome</th>
 						<th>Acompanhantes</th>
+						<th>Festa</th>
 						<th>Ação</th>
+
 					</tr>
 				</thead>
 				<tbody>
@@ -37,6 +43,7 @@
 						<td th:text="${c.id}">João</td>
 						<td th:text="${c.nome}">João</td>
 						<td th:text="${c.qtde}">3</td>
+						<td th:text="${c.festa.nome}"></td>
 						<td>
 							<a th:href="@{/convidados/alterar/}+${c.id}" 
 						    class="glyphicon glyphicon-pencil">

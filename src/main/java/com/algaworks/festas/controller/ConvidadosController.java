@@ -10,6 +10,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.algaworks.festas.models.Convidado;
 import com.algaworks.festas.repository.Convidados;
+import com.algaworks.festas.repository.Festas;
 
 @Controller
 @RequestMapping("/convidados")
@@ -18,10 +19,14 @@ public class ConvidadosController {
 	@Autowired
 	Convidados convidados;
 	
+	@Autowired 
+	Festas festas;
+	
 	@RequestMapping("")
 	public ModelAndView listar() {
 		ModelAndView mv = new ModelAndView("ConvidadosListagem.html");
 		mv.addObject(new Convidado());
+		mv.addObject("festas",festas.findAll());
 		mv.addObject("convidados",convidados.findAll());
 		return mv;
 	}
@@ -37,6 +42,7 @@ public class ConvidadosController {
 		ModelAndView mv = new ModelAndView("ConvidadosListagem.html");
 		Convidado convidado = convidados.getOne(id);
 		mv.addObject(convidado);
+		mv.addObject("festas",festas.findAll());
 		mv.addObject("convidados",convidados.findAll());
 		return mv;
 	}

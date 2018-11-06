@@ -1,11 +1,14 @@
 package com.algaworks.festas.models;
 
 import java.util.Date;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Festa {
@@ -17,8 +20,21 @@ public class Festa {
 	private String data;
 	private String hora;
 	private String foto;
+	
+	@OneToMany(mappedBy = "festa", cascade = CascadeType.ALL)
+	private Set<Convidado> convidados;
+	
+	
+	//Getters and Setters
+	
 	public Long getId() {
 		return id;
+	}
+	public Set<Convidado> getConvidados() {
+		return convidados;
+	}
+	public void setConvidados(Set<Convidado> convidados) {
+		this.convidados = convidados;
 	}
 	public void setId(Long id) {
 		this.id = id;
