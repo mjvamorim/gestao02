@@ -52,6 +52,11 @@
 		   								title="Excluir" rel="tooltip" data-placement="top">
 		   							<span class="glyphicon glyphicon-remove"></span>
 		   					</a>
+							<a class="btn btn-link btn-xs" data-toggle="modal" data-target="#uploadModal"
+		   								th:attr="data-id=${f.id}, data-model='festa' "
+		   								title="Obter Foto" rel="tooltip" data-placement="top">
+		   							<span class="glyphicon glyphicon-picture"></span>
+		   					</a>
 						</td>
 					</tr>
 				</tbody>
@@ -59,7 +64,7 @@
 		</div>
 	</div>
 	<div  th:replace="fragments/exclusao :: exclusao"> </div>
-	
+	<div  th:replace="fragments/upload :: upload"> </div>
 </section>
 
 

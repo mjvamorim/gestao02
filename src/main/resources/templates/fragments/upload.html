@@ -1,0 +1,43 @@
+
+<div th:fragment="upload">
+	<div class="modal fade" id="uploadModal" tabindex="-1">
+		<div class="modal-dialog">
+			<form th:attr="data-url-base=@{/}" enctype="multipart/form-data" method="POST" >	
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">UpLoad</h4>
+					</div>
+	
+					<div class="modal-body">
+						<input id="item_id" name="item_id" type="text" />
+						<input type="file" name="file" id="file" class="form-control" placeholder="Arquivo" />
+					</div>
+	
+					<div class="modal-footer">
+						
+						<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+						<button type="submit" class="btn btn-primary">Salvar</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script>
+	$('#uploadModal').on('show.bs.modal', function(event) {
+		var button = $(event.relatedTarget);
+		
+		var model = button.data('model');
+		var id = button.data('id');
+	 
+		var modal = $(this);
+		var form = modal.find('form');
+		$('#item_id').val(id);
+		var action = form.data('url-base');
+		if (!action.endsWith('/')) {
+			action += '/';
+		}
+		form.attr('action', action + model+'s/image/');
+	});
+	</script>
+</div>
+

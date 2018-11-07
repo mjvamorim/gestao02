@@ -1,6 +1,5 @@
 package com.algaworks.festas.models;
 
-import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -63,6 +62,8 @@ public class Festa {
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}
+	
+
 
 
 }
