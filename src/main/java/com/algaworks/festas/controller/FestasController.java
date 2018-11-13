@@ -73,7 +73,7 @@ public class FestasController {
 	public String uploadMultipartFile(@RequestParam("file") MultipartFile file,@RequestParam("item_id") String id) {
 		if (file.isEmpty()) {
 			//redirectAttributes.addFlashAttribute("message", "Please select a file to upload");
-			return "redirect:/";
+			return "redirect:/festas";
 		}
 		try {
 			byte[] bytes = file.getBytes();
